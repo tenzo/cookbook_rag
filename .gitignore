@@ -6,6 +6,16 @@ __pycache__/
 # C extensions
 *.so
 
+# Docker compose volumes
+qdrant_data
+
+# Local document files
+recipes_docs
+ingest_cache
+
+# IDE files
+.idea/
+
 # Distribution / packaging
 .Python
 build/

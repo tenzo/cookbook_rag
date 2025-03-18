@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cookbook-rag"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic-settings>=2.8.1",
+    "ragbits>=0.9.0",
+    "ragbits-core[local,qdrant]>=0.9.0",
+    "unstructured-client>=0.31.1",
+    "unstructured[pdf]>=0.16.25",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+only-include = ["src"]
+sources = ["src"]
+packages = ["cookbook_rag"]
+
+[dependency-groups]
+experiment = [
+    "jupyterlab>=4.3.6",
+]
